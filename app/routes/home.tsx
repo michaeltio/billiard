@@ -6,19 +6,97 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion";
+import Masonry from "react-masonry-css";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Moxa Billiard" },
+    { title: "The Great Billiard" },
     { name: "description", content: "Billiard Place" },
   ];
 }
 
 export default function Home() {
+  const breakpointColumnsObj = {
+    default: 4, // Default 4 kolom
+    1100: 3, // 3 kolom jika lebar layar <= 1100px
+    700: 2, // 2 kolom jika lebar layar <= 700px
+    500: 1, // 1 kolom jika lebar layar <= 500px
+  };
+
+  const items = [
+    {
+      id: "123",
+      title: "midnight",
+      imageUrl:
+        "https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg",
+      description: "World",
+    },
+    {
+      id: "123",
+      title: "sky",
+      imageUrl:
+        "https://images.pexels.com/photos/1906658/pexels-photo-1906658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      description: "World",
+    },
+    {
+      id: "123",
+      title: "midnight",
+      imageUrl:
+        "https://images.pexels.com/photos/937980/pexels-photo-937980.jpeg",
+      description: "World",
+    },
+    {
+      id: "123",
+      title: "sky",
+      imageUrl:
+        "https://images.pexels.com/photos/1519088/pexels-photo-1519088.jpeg",
+      description: "World",
+    },
+    {
+      id: "123",
+      title: "sky",
+      imageUrl:
+        "https://images.pexels.com/photos/848573/pexels-photo-848573.jpeg",
+      description: "World",
+    },
+    {
+      id: "123",
+      title: "midnight",
+      imageUrl:
+        "https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg",
+      description: "World",
+    },
+    {
+      id: "123",
+      title: "sky",
+      imageUrl:
+        "https://images.pexels.com/photos/1906658/pexels-photo-1906658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      description: "World",
+    },
+    {
+      id: "123",
+      title: "midnight",
+      imageUrl:
+        "https://images.pexels.com/photos/937980/pexels-photo-937980.jpeg",
+      description: "World",
+    },
+    {
+      id: "123",
+      title: "sky",
+      imageUrl:
+        "https://images.pexels.com/photos/1519088/pexels-photo-1519088.jpeg",
+      description: "World",
+    },
+    {
+      id: "123",
+      title: "sky",
+      imageUrl:
+        "https://images.pexels.com/photos/848573/pexels-photo-848573.jpeg",
+      description: "World",
+    },
+  ];
   return (
     <main>
-      {" "}
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background GIF/Video Placeholder */}
         <div className="absolute inset-0 z-0">
@@ -56,7 +134,37 @@ export default function Home() {
         {/* Decorative elements */}
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/50 to-transparent"></div>
       </section>
-      {/* Placeholder for next sections */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Our Gallery
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Explore our premium billiard facilities and memorable moments
+            </p>
+          </div>
+
+          {/* Masonry Grid */}
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {items.map((item) => (
+              <div key={item.id} className="item-card">
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="w-full h-auto"
+                />
+                <h3 className="text-lg font-semibold mt-2">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.description}</p>
+              </div>
+            ))}
+          </Masonry>
+        </div>
+      </section>
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">

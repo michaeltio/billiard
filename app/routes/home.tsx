@@ -12,7 +12,7 @@ import { Link } from "react-router";
 import { useState, useEffect } from "react";
 
 export function meta({}: Route.MetaArgs) {
-  return [  
+  return [
     { title: "The Great Billiard" },
     { name: "description", content: "Billiard Place" },
   ];
@@ -47,21 +47,21 @@ export default function Home() {
       id: "123",
       title: "midnight",
       imageUrl:
-        "https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg",
+        "https://whatsnewindonesia.com/sites/default/files/inline-images/outbreakpoolandbar.jpeg",
       description: "World",
     },
     {
       id: "123",
       title: "sky",
       imageUrl:
-        "https://images.pexels.com/photos/1906658/pexels-photo-1906658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YBgrLNa14WFVgB8a/img_1931-dWxypDaqbkIMppXv.jpeg",
       description: "World",
     },
     {
       id: "123",
       title: "midnight",
       imageUrl:
-        "https://images.pexels.com/photos/937980/pexels-photo-937980.jpeg",
+        "https://visitmineralwells.org/wp-content/uploads/2023/01/Legends-Pool-Hall-1200x600-1.jpg",
       description: "World",
     },
     {
@@ -75,21 +75,21 @@ export default function Home() {
       id: "123",
       title: "sky",
       imageUrl:
-        "https://images.pexels.com/photos/848573/pexels-photo-848573.jpeg",
+        "https://www.thesaturdaypaper.com.au/sites/default/files/styles/article_large/public/images/sport_robby_foldvari_for_web.jpg?itok=FpwIrS_e",
       description: "World",
     },
     {
       id: "123",
       title: "midnight",
       imageUrl:
-        "https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg",
+        "https://i.ytimg.com/vi/hBf7s2c5QaI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCJeNaTy7R0TQUVyjsjt3__uYF8bw",
       description: "World",
     },
     {
       id: "123",
       title: "sky",
       imageUrl:
-        "https://images.pexels.com/photos/1906658/pexels-photo-1906658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://avatars.mds.yandex.net/get-altay/9368060/2a00000188bfc10a5f6a3d1b3812baf2051a/L_height",
       description: "World",
     },
     {
@@ -187,7 +187,7 @@ export default function Home() {
           </div>
           <img
             src="/logo-white.png"
-            className="absolute top-20 left-1/2 w-12 h-12  animate-bounce delay-100"
+            className="absolute bottom-20 left-1/2 w-12 h-12  animate-bounce delay-100"
           />
         </div>
 

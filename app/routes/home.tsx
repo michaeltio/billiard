@@ -1,10 +1,10 @@
 import type { Route } from "./+types/home";
 
-import NavBar from "~/components/custom/Navbar";
+import NavBar from "~/components/custom/NavBar";
 import HeroSection from "~/components/sections/HeroSection";
 import GallerySection from "~/components/sections/GallerySection";
 import PriceSection from "~/components/sections/PriceSection";
-import FAQSection from "~/components/sections/FaqSection";
+import FAQSection from "~/components/sections/FAQSection";
 import Footer from "~/components/custom/Footer";
 
 export function meta({}: Route.MetaArgs) {

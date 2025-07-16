@@ -2,7 +2,10 @@ import { Button } from "~/components/ui/button";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      id="hero"
+    >
       {/* Background GIF/Video Placeholder */}
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-950 to-slate-800 opacity-90">

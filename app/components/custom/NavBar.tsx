@@ -67,14 +67,6 @@ export default function NavBar() {
             FAQ
           </Link>
         </li>
-        <li>
-          <Link
-            to="#contact"
-            className="hover:text-gray-300 font-medium text-sm md:text-base"
-          >
-            Contact
-          </Link>
-        </li>
       </ul>
     </nav>
   );

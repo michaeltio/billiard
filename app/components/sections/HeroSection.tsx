@@ -1,5 +1,6 @@
 import { Button } from "~/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router";
 
 export default function HeroSection() {
   return (
@@ -14,15 +15,17 @@ export default function HeroSection() {
           <div className="absolute inset-0 bg-[url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW4wbG1rbmRmYm8xeXBvdHZ4d2hwdDB5dTVsZHozNWJ0ZHNoYTMyeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l7epimG7ALYEa8QmLs/giphy.gif?height=1080&width=1920')] bg-cover bg-center opacity-30"></div>
         </div>
         <div className="flex items-center justify-center">
-          <div className="absolute bottom-20  animate-bounce delay-100">
-            <div className="flex items-center justify-center">
-              <img src="/logo-white.png" className=" w-12 h-12" />
+          <Link to="#gallery">
+            <div className="absolute bottom-20  animate-bounce delay-100">
+              <div className="flex items-center justify-center">
+                <img src="/logo-white.png" className=" w-12 h-12" />
+              </div>
+              <p className="text-white mt-2">Scroll to explore</p>
+              <div className="flex items-center justify-center">
+                <ChevronDown color="#ffffff" />
+              </div>
             </div>
-            <p className="text-white mt-2">Scroll to explore</p>
-            <div className="flex items-center justify-center">
-              <ChevronDown color="#ffffff" />
-            </div>
-          </div>
+          </Link>
         </div>
       </div>
 

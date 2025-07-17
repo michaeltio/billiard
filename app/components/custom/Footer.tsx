@@ -156,7 +156,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-gray-500 mt-12 pt-8">
+        <div className="border-t border-gray-500 mt-12 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-300 text-sm mb-4 md:mb-0">
               © 2024 Elite Billiard Club. All rights reserved.
@@ -184,7 +184,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="mx-auto  px-6 py-4 text-center bg-blue-950 mt-12">
+      {/* <div className="mx-auto  px-6 py-4 text-center bg-blue-950 mt-12">
         <p className="text-base leading-7 text-gray-300">
           If you are interested in this website for your billiard place,
           <br />
@@ -196,7 +196,7 @@ export default function Footer() {
             tio.michael2004@gmail.com
           </a>
         </p>
-      </div>
+      </div> */}
     </footer>
   );
 }

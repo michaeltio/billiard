@@ -63,12 +63,12 @@ export default function PriceSection() {
             className="bg-white rounded-2xl p-8 shadow-lg border-2 relative overflow-hidden"
             style={{ borderColor: "#374f7e" }}
           >
-            <div
+            {/* <div
               className="absolute top-0 right-0 text-white px-4 py-1 text-sm font-semibold rounded-bl-lg"
               style={{ backgroundColor: "#374f7e" }}
             >
               POPULAR
-            </div>
+            </div> */}
             <div className="text-center mb-6">
               <h3
                 className="text-2xl font-bold mb-2"
@@ -155,7 +155,7 @@ export default function PriceSection() {
 
           {/* Weekend Happy Hour Card */}
           <div
-            className="bg-white rounded-2xl p-8 shadow-lg border"
+            className="bg-white rounded-2xl p-8 shadow-lg border-2"
             style={{ borderColor: "#374f7e" }}
           >
             <div className="text-center mb-6">

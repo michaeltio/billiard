@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#374f7e" }} className="py-16">
+    <footer style={{ backgroundColor: "#374f7e" }} className="pt-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -183,6 +183,19 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="mx-auto  px-6 py-4 text-center bg-blue-950 mt-12">
+        <p className="text-base leading-7 text-gray-300">
+          If you are interested in this website for your billiard place,
+          <br />
+          please email me at{" "}
+          <a
+            href="mailto:tio.michael2004@gmail.com"
+            className="font-semibold text-blue-400 hover:text-blue-300"
+          >
+            tio.michael2004@gmail.com
+          </a>
+        </p>
       </div>
     </footer>
   );

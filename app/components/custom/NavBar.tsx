@@ -36,6 +36,7 @@ export default function NavBar() {
     >
       <ul className="flex space-x-6 md:space-x-8">
         <li>
+          <a href="#gallery">Testing</a>
           <Link
             to="#hero"
             className="hover:text-gray-300 font-medium text-sm md:text-base"

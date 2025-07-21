@@ -1,8 +1,54 @@
+import { SplitText } from "gsap/SplitText";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default function PriceSection() {
+  const priceSectionContainer = useRef<HTMLObjectElement>(null);
+  useGSAP(
+    () => {
+      gsap.registerPlugin(SplitText, ScrollTrigger);
+
+      const split = SplitText.create("[data-anim='header-container']", {
+        type: "words",
+      });
+
+      // const priceTimeline = gsap.timeline();
+
+      gsap.from(split.words, {
+        scrollTrigger: {
+          markers: true,
+          trigger: "[data-anim='header-container']",
+          start: "20px 70%",
+        },
+        y: 100,
+        autoAlpha: 0,
+        stagger: 0.05,
+      });
+
+      gsap.from("[data-anim='price-card']", {
+        scrollTrigger: {
+          markers: true,
+          trigger: "[data-anim='header-container']",
+          start: "20px 70%",
+        },
+        yPercent: 100,
+        stagger: 0.1,
+        opacity: 0,
+      });
+    },
+    { scope: priceSectionContainer }
+  );
+
   return (
-    <section className="py-20 bg-gray-50" id="pricing">
+    <section
+      ref={priceSectionContainer}
+      className="py-20 bg-gray-50"
+      id="pricing"
+    >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div data-anim="header-container" className="text-center mb-12">
           <h2 className="text-4xl font-bold" style={{ color: "#374f7e" }}>
             Price List
           </h2>
@@ -11,9 +57,14 @@ export default function PriceSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {/* container */}
+        <div
+          data-anim="price-container"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+        >
           {/* Normal Price Card */}
           <div
+            data-anim="price-card"
             className="bg-white rounded-2xl p-8 shadow-lg border-2"
             style={{ borderColor: "#374f7e" }}
           >
@@ -60,6 +111,7 @@ export default function PriceSection() {
 
           {/* Weekdays Happy Hour Card */}
           <div
+            data-anim="price-card"
             className="bg-white rounded-2xl p-8 shadow-lg border-2 relative overflow-hidden"
             style={{ borderColor: "#374f7e" }}
           >
@@ -155,6 +207,7 @@ export default function PriceSection() {
 
           {/* Weekend Happy Hour Card */}
           <div
+            data-anim="price-card"
             className="bg-white rounded-2xl p-8 shadow-lg border-2"
             style={{ borderColor: "#374f7e" }}
           >

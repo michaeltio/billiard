@@ -10,7 +10,7 @@ import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/SplitText";
+// import { SplitText } from "gsap/SplitText";
 
 import { faq } from "~/data/faq";
 
@@ -20,6 +20,7 @@ export default function FAQSection() {
   useGSAP(
     async () => {
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      const { SplitText } = await import("gsap/SplitText");
 
       gsap.registerPlugin(ScrollTrigger, SplitText);
 

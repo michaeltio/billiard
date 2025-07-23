@@ -1,7 +1,7 @@
-import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { gsap } from "gsap";
+// import { SplitText } from "gsap/SplitText";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function PriceSection() {
@@ -9,6 +9,7 @@ export default function PriceSection() {
   useGSAP(
     async () => {
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      const { SplitText } = await import("gsap/SplitText");
 
       gsap.registerPlugin(SplitText, ScrollTrigger);
 

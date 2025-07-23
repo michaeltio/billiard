@@ -30,6 +30,7 @@ export default function FAQSection() {
           // markers: true,
           trigger: "[data-anim='faq-header-container']",
           start: "20px 75%",
+          toggleActions: "play none none reverse",
         },
         y: 100,
         autoAlpha: 0,
@@ -38,8 +39,9 @@ export default function FAQSection() {
 
       gsap.from("[data-anim='accordion-item']", {
         scrollTrigger: {
-          markers: true,
+          // markers: true,
           trigger: "[data-anim='faq-header-container']",
+          toggleActions: "play none none reverse",
           start: "20px 75%",
         },
         stagger: 0.05,

@@ -20,6 +20,7 @@ export default function PriceSection() {
         scrollTrigger: {
           trigger: "[data-anim='price-header-container']",
           start: "20px 75%",
+          toggleActions: "play none none reverse",
         },
         y: 100,
         autoAlpha: 0,
@@ -30,6 +31,7 @@ export default function PriceSection() {
         scrollTrigger: {
           trigger: "[data-anim='price-header-container']",
           start: "20px 75%",
+          toggleActions: "play none none reverse",
         },
         yPercent: 100,
         stagger: 0.1,
@@ -40,6 +42,7 @@ export default function PriceSection() {
         scrollTrigger: {
           trigger: "[data-anim='solo-card']",
           start: "-200px 90%",
+          toggleActions: "play none none reverse",
         },
         yPercent: 100,
         stagger: 0.1,

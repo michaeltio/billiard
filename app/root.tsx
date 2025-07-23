@@ -10,22 +10,25 @@ import type { Route } from "./+types/root";
 import "./app.css";
 
 import { gsap } from "gsap";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollSmoother } from "gsap/ScrollSmoother";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 import { useRef } from "react";
 import { useLocation } from "react-router";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollTrigger);
-
 export function Layout({ children }: { children: React.ReactNode }) {
   const main = useRef<HTMLDivElement>(null);
-  const smoother = useRef<ScrollSmoother | null>(null);
   const location = useLocation();
+  const smoother = useRef<ScrollSmoother | null>(null);
 
   useGSAP(
-    () => {
+    async () => {
+      // 1. Impor plugin secara dinamis HANYA di client-side
+      const { ScrollSmoother } = await import("gsap/ScrollSmoother");
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollTrigger);
+
       let skewSetter = gsap.quickTo("img", "skewY"),
         clamp = gsap.utils.clamp(-2, 2);
 
@@ -63,7 +66,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <div ref={main}>
           <div id="smooth-wrapper">
-            <div id="smooth-content">{children}</div>
+            <div id="smooth-content" className="bg-gray-50">
+              {children}
+            </div>
           </div>
         </div>
 

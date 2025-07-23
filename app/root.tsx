@@ -27,7 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   useGSAP(
     () => {
       let skewSetter = gsap.quickTo("img", "skewY"),
-        clamp = gsap.utils.clamp(-5, 5);
+        clamp = gsap.utils.clamp(-2, 2);
 
       smoother.current = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",

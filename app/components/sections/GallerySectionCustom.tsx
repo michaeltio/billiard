@@ -4,7 +4,7 @@ export default function GallerySectionCustom() {
   return (
     <section className="py-20 bg-gray-50 " id="gallery">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 sticky">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Gallery</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Explore our premium billiard facilities and memorable moments

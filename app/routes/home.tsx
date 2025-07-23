@@ -6,6 +6,7 @@ import GallerySection from "~/components/sections/GallerySection";
 import PriceSection from "~/components/sections/PriceSection";
 import FAQSection from "~/components/sections/FAQSection";
 import Footer from "~/components/custom/Footer";
+import GallerySectionCustom from "~/components/sections/GallerySectionCustom";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -19,7 +20,8 @@ export default function Home() {
     <>
       <NavBar />
       <HeroSection />
-      <GallerySection />
+      {/* <GallerySection /> */}
+      <GallerySectionCustom />
       <PriceSection />
       <FAQSection />
       <Footer />

@@ -26,39 +26,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   useGSAP(
     () => {
+      let skewSetter = gsap.quickTo("img", "skewY"),
+        clamp = gsap.utils.clamp(-5, 5);
+
       smoother.current = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
         content: "#smooth-content",
         smooth: 1.5,
         effects: true,
+        onUpdate: (self) => skewSetter(clamp(self.getVelocity() / -50)),
+        onStop: () => skewSetter(0),
       });
-
-      const handleAnchorClick = (e: MouseEvent) => {
-        const target = e.target as HTMLElement;
-        const link = target.closest('a[href^="#"]');
-
-        if (link) {
-          e.preventDefault();
-          const hash = link.getAttribute("href");
-
-          if (hash) {
-            // --- GUNAKAN KODE ANDA DI SINI ---
-            // GSAP akan otomatis menargetkan scroller yang benar
-            // karena ScrollSmoother sudah mengaturnya.
-            gsap.to(window, {
-              duration: 1.5,
-              scrollTo: { y: hash, offsetY: 80 }, // offsetY untuk memberi jarak dari atas (misal: untuk header)
-              ease: "power2.inOut",
-            });
-          }
-        }
-      };
-
-      document.addEventListener("click", handleAnchorClick);
-
-      return () => {
-        document.removeEventListener("click", handleAnchorClick);
-      };
     },
     { scope: main }
   );

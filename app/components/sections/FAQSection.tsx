@@ -6,13 +6,55 @@ import {
   AccordionTrigger,
 } from "~/components/ui/accordion";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
+
 import { faq } from "~/data/faq";
 
 export default function FAQSection() {
+  const faqSectionContainer = useRef<HTMLObjectElement>(null);
+
+  useGSAP(
+    () => {
+      gsap.registerPlugin(ScrollTrigger, SplitText);
+
+      const split = SplitText.create("[data-anim='faq-header-container']", {
+        type: "words",
+      });
+
+      gsap.from(split.words, {
+        scrollTrigger: {
+          // markers: true,
+          trigger: "[data-anim='faq-header-container']",
+          start: "20px 75%",
+        },
+        y: 100,
+        autoAlpha: 0,
+        stagger: 0.05,
+      });
+
+      gsap.from("[data-anim='accordion-item']", {
+        scrollTrigger: {
+          markers: true,
+          trigger: "[data-anim='faq-header-container']",
+          start: "20px 75%",
+        },
+        stagger: 0.05,
+        autoAlpha: 0,
+        xPercent: -100,
+        duration: 0.7,
+      });
+    },
+    { scope: faqSectionContainer }
+  );
+
   return (
-    <section className="py-20 bg-gray-50" id="faq">
+    <section ref={faqSectionContainer} className="py-20 bg-gray-50" id="faq">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div data-anim="faq-header-container" className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4" style={{ color: "#374f7e" }}>
             Frequently Asked Questions
           </h2>
@@ -21,12 +63,13 @@ export default function FAQSection() {
             services
           </p>
         </div>
-
         <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
             {faq.map((item) => (
               <AccordionItem
+                data-anim="accordion-item"
                 value={item.id}
+                key={item.id}
                 className="bg-white rounded-lg border shadow-sm"
                 style={{ borderColor: "#374f7e" }}
               >
@@ -43,9 +86,8 @@ export default function FAQSection() {
             ))}
           </Accordion>
         </div>
-
         {/* Contact CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12" data-anim="accordion-item">
           <p className="text-gray-600 mb-4">Still have questions?</p>
           <Button
             variant="outline"

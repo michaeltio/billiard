@@ -10,7 +10,7 @@ export default function PriceSection() {
     () => {
       gsap.registerPlugin(SplitText, ScrollTrigger);
 
-      const split = SplitText.create("[data-anim='header-container']", {
+      const split = SplitText.create("[data-anim='price-header-container']", {
         type: "words",
       });
 
@@ -18,9 +18,8 @@ export default function PriceSection() {
 
       gsap.from(split.words, {
         scrollTrigger: {
-          markers: true,
-          trigger: "[data-anim='header-container']",
-          start: "20px 70%",
+          trigger: "[data-anim='price-header-container']",
+          start: "20px 75%",
         },
         y: 100,
         autoAlpha: 0,
@@ -29,9 +28,18 @@ export default function PriceSection() {
 
       gsap.from("[data-anim='price-card']", {
         scrollTrigger: {
-          markers: true,
-          trigger: "[data-anim='header-container']",
-          start: "20px 70%",
+          trigger: "[data-anim='price-header-container']",
+          start: "20px 75%",
+        },
+        yPercent: 100,
+        stagger: 0.1,
+        opacity: 0,
+      });
+
+      gsap.from("[data-anim='solo-card']", {
+        scrollTrigger: {
+          trigger: "[data-anim='solo-card']",
+          start: "-200px 90%",
         },
         yPercent: 100,
         stagger: 0.1,
@@ -48,7 +56,7 @@ export default function PriceSection() {
       id="pricing"
     >
       <div className="container mx-auto px-4">
-        <div data-anim="header-container" className="text-center mb-12">
+        <div data-anim="price-header-container" className="text-center mb-12">
           <h2 className="text-4xl font-bold" style={{ color: "#374f7e" }}>
             Price List
           </h2>
@@ -274,7 +282,7 @@ export default function PriceSection() {
         </div>
 
         {/* Solo Training Special Offer */}
-        <div className="mt-12 max-w-4xl mx-auto">
+        <div data-anim="solo-card" className="mt-12 max-w-4xl mx-auto">
           <div
             className="rounded-2xl p-8 text-center shadow-xl relative overflow-hidden"
             style={{

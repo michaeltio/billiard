@@ -10,6 +10,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 
 import { gsap } from "gsap";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 // import { ScrollSmoother } from "gsap/ScrollSmoother";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -71,7 +72,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </div>
-
+        <SpeedInsights />
         <Scripts />
       </body>
     </html>

@@ -7,7 +7,7 @@ import {
 } from "~/components/ui/accordion";
 
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
@@ -18,7 +18,9 @@ export default function FAQSection() {
   const faqSectionContainer = useRef<HTMLObjectElement>(null);
 
   useGSAP(
-    () => {
+    async () => {
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+
       gsap.registerPlugin(ScrollTrigger, SplitText);
 
       const split = SplitText.create("[data-anim='faq-header-container']", {

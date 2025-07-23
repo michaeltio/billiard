@@ -2,12 +2,14 @@ import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function PriceSection() {
   const priceSectionContainer = useRef<HTMLObjectElement>(null);
   useGSAP(
-    () => {
+    async () => {
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+
       gsap.registerPlugin(SplitText, ScrollTrigger);
 
       const split = SplitText.create("[data-anim='price-header-container']", {

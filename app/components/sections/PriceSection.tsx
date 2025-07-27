@@ -58,10 +58,10 @@ export default function PriceSection() {
   return (
     <section
       ref={priceSectionContainer}
-      className="py-20 bg-gray-50"
+      className="max-w-screen-lg mx-auto"
       id="pricing"
     >
-      <div className="container mx-auto px-4">
+      <div className="">
         <div data-anim="price-header-container" className="text-center mb-12">
           <h2 className="text-4xl font-bold" style={{ color: "#374f7e" }}>
             Price List
@@ -280,40 +280,6 @@ export default function PriceSection() {
                     style={{ color: "#374f7e" }}
                   >
                     Rp 45<span className="text-sm font-normal">/hr</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Solo Training Special Offer */}
-        <div data-anim="solo-card" className="mt-12 max-w-4xl mx-auto">
-          <div
-            className="rounded-2xl p-8 text-center shadow-xl relative overflow-hidden"
-            style={{
-              background: "linear-gradient(135deg, #374f7e 0%, #2a3d66 100%)",
-            }}
-          >
-            <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-white mb-2">
-                Solo Training
-              </h3>
-              <p className="text-white text-opacity-90 text-lg mb-4">
-                Perfect your skills with dedicated practice time
-              </p>
-
-              <div className="bg-gradient-to-br from-[#4a69aa] via-[#2a3d66] to-[#2a3d66] bg-opacity-20 rounded-xl p-6 backdrop-blur-sm">
-                <div className="text-white">
-                  <div className="text-xl font-semibold mb-2">
-                    Monday - Friday
-                  </div>
-                  <div className="text-lg mb-2">12:00 - 18:00</div>
-                  <div className="text-4xl font-bold">
-                    FREE
-                    <span className="text-lg font-normal ml-2">
-                      Solo Practice
-                    </span>
                   </div>
                 </div>
               </div>

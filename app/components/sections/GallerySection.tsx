@@ -1,40 +1,66 @@
-import Masonry from "react-masonry-css";
 import { gallery } from "~/data/gallery";
 
-export default function GallerySection() {
-  const breakpointColumnsObj = {
-    default: 4, // Default 4 kolom
-    1100: 3, // 3 kolom jika lebar layar <= 1100px
-    700: 2, // 2 kolom jika lebar layar <= 700px
-    500: 1, // 1 kolom jika lebar layar <= 500px
-  };
-
+export default function GallerySectionCustom() {
   return (
-    <section className="py-20 bg-gray-50" id="gallery">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Gallery</h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Explore our premium billiard facilities and memorable moments
-          </p>
-        </div>
+    <section className="max-w-screen-lg mx-auto pt-10" id="gallery">
+      <div className="text-center">
+        <h2 className="text-4xl font-bold text-gray-800">Our Gallery</h2>
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          Explore our premium billiard facilities and memorable moments
+        </p>
+      </div>
 
-        {/* Masonry Grid */}
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {gallery.map((item) => (
-            <div key={item.id} className="item-card">
-              <img
-                src={item.imageUrl}
-                alt={item.title}
-                className="w-full h-auto"
-              />
-            </div>
-          ))}
-        </Masonry>
+      <div className="flex justify-center gap-5 overflow-hidden mt-5">
+        <div data-speed="1" className="flex flex-col gap-5 w-1/3 relative">
+          <img
+            src={gallery[0].imageUrl}
+            className="aspect-[9/16] object-cover "
+          />
+          <img
+            src={gallery[1].imageUrl}
+            alt=""
+            className="aspect-[9/16] object-cover"
+          />
+          <img
+            src={gallery[2].imageUrl}
+            alt=""
+            className="aspect-[9/16] object-cover"
+          />
+        </div>
+        <div data-speed="0.8" className="flex flex-col relative gap-5 w-1/3">
+          <img
+            src={gallery[3].imageUrl}
+            alt=""
+            className="aspect-[9/16] object-cover"
+          />
+          <img
+            src={gallery[4].imageUrl}
+            alt=""
+            className="aspect-[9/16] object-cover"
+          />
+          <img
+            src={gallery[5].imageUrl}
+            alt=""
+            className="aspect-[9/16] object-cover"
+          />
+        </div>
+        <div data-speed="0.5" className="flex flex-col gap-5 w-1/3">
+          <img
+            src={gallery[6].imageUrl}
+            alt=""
+            className="aspect-[9/16]  object-cover"
+          />
+          <img
+            src={gallery[7].imageUrl}
+            alt=""
+            className="aspect-[9/16]  object-cover"
+          />
+          <img
+            src={gallery[8].imageUrl}
+            alt=""
+            className="aspect-[9/16]  object-cover"
+          />
+        </div>
       </div>
     </section>
   );

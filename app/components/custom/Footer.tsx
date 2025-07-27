@@ -185,17 +185,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mx-auto  px-6 py-4 text-center bg-blue-950 mt-12">
-        <p className="text-base leading-7 text-gray-300">
-          If you are interested in this website for your billiard place,
-          <br />
-          please email me at{" "}
-          <a
-            href="mailto:tio.michael2004@gmail.com"
-            className="font-semibold text-blue-400 hover:text-blue-300"
-          >
-            tio.michael2004@gmail.com
-          </a>
-        </p>
+        <p className="text-white">© tio.michael2004@gmail.com 2025</p>
       </div>
     </footer>
   );

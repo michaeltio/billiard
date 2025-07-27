@@ -4,6 +4,7 @@ import {
   Meta,
   Outlet,
   Scripts,
+  // ScrollRestoration,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -64,15 +65,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-[#253872]">
         <div ref={main}>
           <div id="smooth-wrapper">
-            <div id="smooth-content" className="bg-gray-50">
-              {children}
-            </div>
+            <div id="smooth-content">{children}</div>
           </div>
         </div>
         <SpeedInsights />
+
         <Scripts />
       </body>
     </html>

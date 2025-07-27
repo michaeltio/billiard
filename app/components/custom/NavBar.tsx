@@ -1,43 +1,41 @@
 import { cn } from "~/lib/utils";
 import { Link } from "react-router";
-import { useState, useEffect } from "react";
+import { gsap } from "gsap";
+import React from "react";
+// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useGSAP } from "@gsap/react";
 
 export default function NavBar() {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  useGSAP(async () => {
+    const { ScrollToPlugin } = await import("gsap/ScrollToPlugin");
+    gsap.registerPlugin(ScrollToPlugin);
+  });
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, [lastScrollY]);
+  const handleNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    event.preventDefault();
 
-  const handleScroll = () => {
-    if (typeof window !== "undefined") {
-      if (window.scrollY > lastScrollY && window.scrollY > 100) {
-        setIsVisible(false);
-      } else if (window.scrollY < lastScrollY) {
-        setIsVisible(true);
-      }
-      setLastScrollY(window.scrollY);
-    }
+    gsap.to(window, {
+      duration: 1.5,
+      scrollTo: {
+        y: targetId,
+      },
+
+      ease: "power3.inOut",
+    });
   };
+
   return (
-    <nav
-      className={cn(
-        "fixed top-4 left-1/2 transform -translate-x-1/2 z-50",
-        "bg-[#374f7e] text-white px-6 py-3 rounded-full shadow-lg",
-        "transition-all duration-300 ease-in-out",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"
-      )}
-    >
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-[#ff66b4] text-white px-6 py-3 rounded-full shadow-lg z-50">
       <ul className="flex space-x-6 md:space-x-8">
         <li>
           <Link
             to="#hero"
+            onClick={(e) => {
+              handleNavClick(e, "#hero");
+            }}
             className="hover:text-gray-300 font-medium text-sm md:text-base"
           >
             Home
@@ -46,6 +44,9 @@ export default function NavBar() {
         <li>
           <Link
             to="#gallery"
+            onClick={(e) => {
+              handleNavClick(e, "#gallery");
+            }}
             className="hover:text-gray-300 font-medium text-sm md:text-base"
           >
             Gallery
@@ -54,6 +55,9 @@ export default function NavBar() {
         <li>
           <Link
             to="#pricing"
+            onClick={(e) => {
+              handleNavClick(e, "#pricing");
+            }}
             className="hover:text-gray-300 font-medium text-sm md:text-base"
           >
             Pricing
@@ -62,6 +66,9 @@ export default function NavBar() {
         <li>
           <Link
             to="#faq"
+            onClick={(e) => {
+              handleNavClick(e, "#faq");
+            }}
             className="hover:text-gray-300 font-medium text-sm md:text-base"
           >
             FAQ

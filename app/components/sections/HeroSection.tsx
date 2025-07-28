@@ -58,7 +58,7 @@ export default function HeroSection() {
         </Button>
       </div>
       {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/50 to-transparent"></div>
+      {/* <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/50 to-transparent"></div> */}
     </section>
   );
 }

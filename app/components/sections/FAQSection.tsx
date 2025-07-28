@@ -60,12 +60,12 @@ export default function FAQSection() {
   return (
     <section
       ref={faqSectionContainer}
-      className="max-w-screen-lg mx-auto bg-gray-50 overflow-visible"
+      className="max-w-screen-lg mx-auto overflow-visible py-10"
       id="faq"
     >
       <div className="">
-        <div data-anim="faq-header-container" className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: "#374f7e" }}>
+        <div data-anim="faq-header-container" className="text-center">
+          <h2 className="text-4xl font-bold" style={{ color: "#374f7e" }}>
             Frequently Asked Questions
           </h2>
           <p className="text-gray-600 text-lg">
@@ -73,7 +73,7 @@ export default function FAQSection() {
             services
           </p>
         </div>
-        <div className="">
+        <div className="mt-5">
           <Accordion type="single" collapsible className="space-y-4">
             {faq.map((item) => (
               <AccordionItem

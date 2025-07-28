@@ -28,53 +28,55 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-[#ff66b4] text-white px-6 py-3 rounded-full shadow-lg z-50">
-      <ul className="flex space-x-6 md:space-x-8">
-        <li>
-          <Link
-            to="#hero"
-            onClick={(e) => {
-              handleNavClick(e, "#hero");
-            }}
-            className="hover:text-gray-300 font-medium text-sm md:text-base"
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="#gallery"
-            onClick={(e) => {
-              handleNavClick(e, "#gallery");
-            }}
-            className="hover:text-gray-300 font-medium text-sm md:text-base"
-          >
-            Gallery
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="#pricing"
-            onClick={(e) => {
-              handleNavClick(e, "#pricing");
-            }}
-            className="hover:text-gray-300 font-medium text-sm md:text-base"
-          >
-            Pricing
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="#faq"
-            onClick={(e) => {
-              handleNavClick(e, "#faq");
-            }}
-            className="hover:text-gray-300 font-medium text-sm md:text-base"
-          >
-            FAQ
-          </Link>
-        </li>
-      </ul>
+    <nav className="nav-header">
+      <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-[#ff66b4] text-white px-6 py-3 rounded-full shadow-lg z-50  w-fit">
+        <ul className="flex space-x-6 md:space-x-8">
+          <li>
+            <Link
+              to="#hero"
+              onClick={(e) => {
+                handleNavClick(e, "#hero");
+              }}
+              className="hover:text-gray-300 font-medium text-sm md:text-base"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="#gallery"
+              onClick={(e) => {
+                handleNavClick(e, "#gallery");
+              }}
+              className="hover:text-gray-300 font-medium text-sm md:text-base"
+            >
+              Gallery
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="#pricing"
+              onClick={(e) => {
+                handleNavClick(e, "#pricing");
+              }}
+              className="hover:text-gray-300 font-medium text-sm md:text-base"
+            >
+              Pricing
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="#faq"
+              onClick={(e) => {
+                handleNavClick(e, "#faq");
+              }}
+              className="hover:text-gray-300 font-medium text-sm md:text-base"
+            >
+              FAQ
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }

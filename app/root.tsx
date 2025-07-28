@@ -42,19 +42,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
         onUpdate: (self) => skewSetter(clamp(self.getVelocity() / -50)),
         onStop: () => skewSetter(0),
       });
+
+      ScrollTrigger.create({
+        trigger: ".nav-header",
+        start: "top top",
+        endTrigger: "footer",
+        end: "bottom+=100vh bottom",
+        pin: ".nav-header",
+        pinType: "fixed",
+        markers: true,
+        pinReparent: true,
+        pinSpacing: false,
+      });
     },
+
     { scope: main }
-  );
-
-  useGSAP(
-    () => {
-      const timeout = setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 200);
-
-      return () => clearTimeout(timeout);
-    },
-    { dependencies: [location.pathname], scope: main }
   );
 
   return (

@@ -4,8 +4,8 @@ export default function GallerySectionCustom() {
   return (
     <section className="max-w-screen-lg mx-auto pt-10" id="gallery">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-gray-800">Our Gallery</h2>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+        <h2 className="text-4xl font-bold text-moxa">Our Gallery</h2>
+        <p className="text-[#f5f6f3] text-lg max-w-2xl mx-auto">
           Explore our premium billiard facilities and memorable moments
         </p>
       </div>

@@ -58,15 +58,13 @@ export default function PriceSection() {
   return (
     <section
       ref={priceSectionContainer}
-      className="max-w-screen-lg mx-auto"
+      className="max-w-screen-lg mx-auto pt-10"
       id="pricing"
     >
       <div className="">
-        <div data-anim="price-header-container" className="text-center mb-12">
-          <h2 className="text-4xl font-bold" style={{ color: "#374f7e" }}>
-            Price List
-          </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+        <div data-anim="price-header-container" className="text-center ">
+          <h2 className="text-4xl font-bold text-[#ff66b4]">Price List</h2>
+          <p className="text-[#f5f6f3] text-lg max-w-2xl mx-auto">
             Affordable rates for every player, with special happy hour discounts
           </p>
         </div>
@@ -74,7 +72,7 @@ export default function PriceSection() {
         {/* container */}
         <div
           data-anim="price-container"
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-5"
         >
           {/* Normal Price Card */}
           <div
